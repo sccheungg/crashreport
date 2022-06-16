@@ -1,0 +1,302 @@
+-------------------------------------
+Translated Report (Full Report Below)
+-------------------------------------
+
+Process:               XProtect [24303]
+Path:                  /Library/Apple/*/XProtect.app/Contents/MacOS/XProtect
+Identifier:            com.apple.XProtectFramework.XProtect
+Version:               2 (1)
+Build Info:            XProtectPayloads-9120012000000~37
+Code Type:             ARM-64 (Native)
+Parent Process:        launchd [1]
+User ID:               501
+
+Date/Time:             2022-06-15 20:38:31.0359 +0200
+OS Version:            macOS 12.4 (21F79)
+Report Version:        12
+Anonymous UUID:        016EEC03-1BC0-B29B-E8D6-65A47C926699
+
+Sleep/Wake UUID:       E03612DA-07BB-4E6B-BAED-E6377420C876
+
+Time Awake Since Boot: 43000 seconds
+Time Since Wake:       30073 seconds
+
+System Integrity Protection: enabled
+
+Crashed Thread:        1  Dispatch queue: com.apple.xpc.activity.com.apple.XprotectFramework.PluginService.scan
+
+Exception Type:        EXC_GUARD (SIGKILL)
+Exception Codes:       GUARD_TYPE_MACH_PORT
+Exception Codes:       0x0000000000002203, 0x0000000000000000
+Exception Note:        EXC_CORPSE_NOTIFY
+
+Termination Reason:    Namespace GUARD, Code 2305845208236958211 
+
+Thread 0::  Dispatch queue: com.apple.main-thread
+0   libsystem_kernel.dylib        	       0x1aaf828b0 mach_msg_trap + 8
+1   libsystem_kernel.dylib        	       0x1aaf82d20 mach_msg + 76
+2   CoreFoundation                	       0x1ab08d2b0 __CFRunLoopServiceMachPort + 372
+3   CoreFoundation                	       0x1ab08b760 __CFRunLoopRun + 1180
+4   CoreFoundation                	       0x1ab08ab24 CFRunLoopRunSpecific + 600
+5   Foundation                    	       0x1abf6f130 -[NSRunLoop(NSRunLoop) runMode:beforeDate:] + 236
+6   Foundation                    	       0x1abfff4a4 -[NSRunLoop(NSRunLoop) run] + 92
+7   XProtect                      	       0x104c97810 main + 1888
+8   dyld                          	       0x10500508c start + 520
+
+Thread 1 Crashed::  Dispatch queue: com.apple.xpc.activity.com.apple.XprotectFramework.PluginService.scan
+0   libsystem_kernel.dylib        	       0x1aaf8282c _kernelrpc_mach_port_mod_refs_trap + 8
+1   libsystem_kernel.dylib        	       0x1aaf83164 mach_port_mod_refs + 40
+2   libxpc.dylib                  	       0x1aacf4fc4 _xpc_mach_port_try_retain_send + 48
+3   libxpc.dylib                  	       0x1aad14b30 ___xpc_activity_dispatch_block_invoke.136 + 240
+4   libdispatch.dylib             	       0x1aadfa5f0 _dispatch_call_block_and_release + 32
+5   libdispatch.dylib             	       0x1aadfc1b4 _dispatch_client_callout + 20
+6   libdispatch.dylib             	       0x1aae038a8 _dispatch_lane_serial_drain + 668
+7   libdispatch.dylib             	       0x1aae04404 _dispatch_lane_invoke + 392
+8   libdispatch.dylib             	       0x1aae0ec98 _dispatch_workloop_worker_thread + 648
+9   libsystem_pthread.dylib       	       0x1aafbc360 _pthread_wqthread + 288
+10  libsystem_pthread.dylib       	       0x1aafbb080 start_wqthread + 8
+
+Thread 2::  Dispatch queue: com.apple.xpc.activity
+0   libdispatch.dylib             	       0x1aae038d0 _dispatch_lane_serial_drain + 708
+1   libdispatch.dylib             	       0x1aae03784 _dispatch_lane_serial_drain + 376
+2   libdispatch.dylib             	       0x1aae04404 _dispatch_lane_invoke + 392
+3   libdispatch.dylib             	       0x1aae0ec98 _dispatch_workloop_worker_thread + 648
+4   libsystem_pthread.dylib       	       0x1aafbc360 _pthread_wqthread + 288
+5   libsystem_pthread.dylib       	       0x1aafbb080 start_wqthread + 8
+
+Thread 3:
+0   libsystem_pthread.dylib       	       0x1aafbb078 start_wqthread + 0
+
+
+Thread 1 crashed with ARM Thread State (64-bit):
+    x0: 0x000000000000000f   x1: 0x0000000000002203   x2: 0x0000000000000000   x3: 0x0000000000000001
+    x4: 0x0000000000000000   x5: 0x0000000000000003   x6: 0x0000000000000000   x7: 0x0000000000000001
+    x8: 0x0000000203e89b2c   x9: 0x0000000000400001  x10: 0x0100000100000000  x11: 0x00000000000879b9
+   x12: 0x0000001000000725  x13: 0x0000000000000000  x14: 0x0000020000011000  x15: 0x0000000100000000
+   x16: 0xffffffffffffffed  x17: 0x0000000205028830  x18: 0x0000000000000000  x19: 0x0000000000000001
+   x20: 0x0000000000000000  x21: 0x0000000000002203  x22: 0x0000000000000203  x23: 0x0000000203e92000
+   x24: 0x0000000106004080  x25: 0x0000000158e0d288  x26: 0x0000000000000114  x27: 0x0000000000000000
+   x28: 0x0000000105804140   fp: 0x000000016b1f2740   lr: 0x00000001aaf83164
+    sp: 0x000000016b1f2720   pc: 0x00000001aaf8282c cpsr: 0x20001000
+   far: 0x0000000107004030  esr: 0x56000080  Address size fault
+
+Binary Images:
+       0x1aaf81000 -        0x1aafb8fff libsystem_kernel.dylib (*) <03f48dc5-caa7-3678-af61-1a3c7fa8b06e> /usr/lib/system/libsystem_kernel.dylib
+       0x1ab008000 -        0x1ab54efff com.apple.CoreFoundation (6.9) <994db908-11a1-3e43-b7df-25c09d51368a> /System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation
+       0x1abf0b000 -        0x1ac2fcfff com.apple.Foundation (6.9) <a2e534d9-cdf0-397f-a41e-147559c83893> /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation
+       0x104c94000 -        0x104c9ffff com.apple.XProtectFramework.XProtect (2) <460aa94b-d8d4-3ff8-959c-76dfadb6228f> /Library/Apple/*/XProtect.app/Contents/MacOS/XProtect
+       0x105000000 -        0x10505ffff dyld (*) <d9c2a46e-8dc4-3950-9d6a-f799e8ccb683> /usr/lib/dyld
+       0x1aace7000 -        0x1aad28fff libxpc.dylib (*) <84c6e826-0826-36cc-ad70-10288b0050e0> /usr/lib/system/libxpc.dylib
+       0x1aadf8000 -        0x1aae3efff libdispatch.dylib (*) <f9300d47-d3db-3349-8a6d-acb68cd9983b> /usr/lib/system/libdispatch.dylib
+       0x1aafb9000 -        0x1aafc5fff libsystem_pthread.dylib (*) <42166a2c-89a9-3c38-a215-f028544cea23> /usr/lib/system/libsystem_pthread.dylib
+
+External Modification Summary:
+  Calls made by other processes targeting this process:
+    task_for_pid: 0
+    thread_create: 0
+    thread_set_state: 0
+  Calls made by this process:
+    task_for_pid: 0
+    thread_create: 0
+    thread_set_state: 0
+  Calls made by all processes on this machine:
+    task_for_pid: 0
+    thread_create: 0
+    thread_set_state: 0
+
+VM Region Summary:
+ReadOnly portion of Libraries: Total=724.9M resident=0K(0%) swapped_out_or_unallocated=724.9M(100%)
+Writable regions: Total=102.0M written=0K(0%) resident=0K(0%) swapped_out=0K(0%) unallocated=102.0M(100%)
+
+                                VIRTUAL   REGION 
+REGION TYPE                        SIZE    COUNT (non-coalesced) 
+===========                     =======  ======= 
+Activity Tracing                   256K        1 
+Dispatch continuations            64.0M        1 
+Kernel Alloc Once                   32K        1 
+MALLOC                            28.1M       13 
+MALLOC guard page                   96K        5 
+STACK GUARD                       56.1M        4 
+Stack                             9808K        4 
+__AUTH                            1529K       89 
+__AUTH_CONST                      6106K      210 
+__DATA                            7101K      197 
+__DATA_CONST                      5530K      212 
+__DATA_DIRTY                       443K       84 
+__FONT_DATA                          4K        1 
+__LINKEDIT                       577.4M        3 
+__OBJC_CONST                       570K       68 
+__OBJC_RO                         83.0M        1 
+__OBJC_RW                         3152K        1 
+__TEXT                           147.5M      220 
+__UNICODE                          592K        1 
+dyld private memory               1024K        1 
+mapped file                         48K        1 
+shared memory                       32K        2 
+===========                     =======  ======= 
+TOTAL                            991.5M     1120 
+
+
+
+-----------
+Full Report
+-----------
+
+{"app_name":"XProtect","timestamp":"2022-06-15 20:38:32.00 +0200","app_version":"2","slice_uuid":"460aa94b-d8d4-3ff8-959c-76dfadb6228f","build_version":"1","platform":1,"bundleID":"com.apple.XProtectFramework.XProtect","share_with_app_devs":0,"is_first_party":0,"bug_type":"309","os_version":"macOS 12.4 (21F79)","incident_id":"F1E25AA9-CF39-4E6A-8E13-41EBA0F42EB7","name":"XProtect"}
+{
+  "uptime" : 43000,
+  "procLaunch" : "2022-06-15 20:38:07.7110 +0200",
+  "procRole" : "Unspecified",
+  "version" : 2,
+  "userID" : 501,
+  "deployVersion" : 210,
+  "modelCode" : "MacBookPro17,1",
+  "procStartAbsTime" : 1040922900668,
+  "coalitionID" : 1657,
+  "osVersion" : {
+    "train" : "macOS 12.4",
+    "build" : "21F79",
+    "releaseType" : "User"
+  },
+  "captureTime" : "2022-06-15 20:38:31.0359 +0200",
+  "incident" : "F1E25AA9-CF39-4E6A-8E13-41EBA0F42EB7",
+  "bug_type" : "309",
+  "pid" : 24303,
+  "procExitAbsTime" : 1041482104403,
+  "translated" : false,
+  "cpuType" : "ARM-64",
+  "procName" : "XProtect",
+  "procPath" : "\/Library\/Apple\/*\/XProtect.app\/Contents\/MacOS\/XProtect",
+  "bundleInfo" : {"CFBundleShortVersionString":"2","CFBundleVersion":"1","CFBundleIdentifier":"com.apple.XProtectFramework.XProtect"},
+  "buildInfo" : {"ProjectName":"XProtectPayloads","SourceVersion":"9120012000000","BuildVersion":"37"},
+  "storeInfo" : {"deviceIdentifierForVendor":"C3995E8E-034A-591C-AB80-B8C897AEC433","thirdParty":true},
+  "parentProc" : "launchd",
+  "parentPid" : 1,
+  "coalitionName" : "com.apple.XprotectFramework.scan",
+  "crashReporterKey" : "016EEC03-1BC0-B29B-E8D6-65A47C926699",
+  "wakeTime" : 30073,
+  "sleepWakeUUID" : "E03612DA-07BB-4E6B-BAED-E6377420C876",
+  "sip" : "enabled",
+  "isCorpse" : 1,
+  "exception" : {"port":8707,"signal":"SIGKILL","guardId":0,"codes":"0x0000000000002203, 0x0000000000000000","violations":["INVALID_NAME"],"message":" INVALID_NAME on mach port 8707 (guarded with 0x0000000000000000)","subtype":"GUARD_TYPE_MACH_PORT","type":"EXC_GUARD","rawCodes":[8707,0]},
+  "termination" : {"namespace":"GUARD","flags":2,"code":2305845208236958211},
+  "extMods" : {"caller":{"thread_create":0,"thread_set_state":0,"task_for_pid":0},"system":{"thread_create":0,"thread_set_state":0,"task_for_pid":0},"targeted":{"thread_create":0,"thread_set_state":0,"task_for_pid":0},"warnings":0},
+  "faultingThread" : 1,
+  "threads" : [{"id":555440,"queue":"com.apple.main-thread","frames":[{"imageOffset":6320,"symbol":"mach_msg_trap","symbolLocation":8,"imageIndex":0},{"imageOffset":7456,"symbol":"mach_msg","symbolLocation":76,"imageIndex":0},{"imageOffset":545456,"symbol":"__CFRunLoopServiceMachPort","symbolLocation":372,"imageIndex":1},{"imageOffset":538464,"symbol":"__CFRunLoopRun","symbolLocation":1180,"imageIndex":1},{"imageOffset":535332,"symbol":"CFRunLoopRunSpecific","symbolLocation":600,"imageIndex":1},{"imageOffset":409904,"symbol":"-[NSRunLoop(NSRunLoop) runMode:beforeDate:]","symbolLocation":236,"imageIndex":2},{"imageOffset":1000612,"symbol":"-[NSRunLoop(NSRunLoop) run]","symbolLocation":92,"imageIndex":2},{"imageOffset":14352,"symbol":"main","symbolLocation":1888,"imageIndex":3},{"imageOffset":20620,"symbol":"start","symbolLocation":520,"imageIndex":4}]},{"triggered":true,"id":555449,"threadState":{"x":[{"value":15},{"value":8707},{"value":0},{"value":1},{"value":0},{"value":3},{"value":0},{"value":1},{"value":8655510316,"symbolLocation":0,"symbol":"mach_task_self_"},{"value":4194305},{"value":72057598332895232},{"value":555449},{"value":68719478565},{"value":0},{"value":2199023325184},{"value":4294967296},{"value":18446744073709551597},{"value":8673986608},{"value":0},{"value":1},{"value":0},{"value":8707},{"value":515},{"value":8655544320,"symbolLocation":0,"symbol":"OBJC_METACLASS_$_OS_xpc_uuid"},{"value":4395647104},{"value":5786096264},{"value":276},{"value":0},{"value":4387258688}],"flavor":"ARM_THREAD_STATE64","lr":{"value":7163359588},"cpsr":{"value":536875008},"fp":{"value":6092171072},"sp":{"value":6092171040},"esr":{"value":1442840704,"description":" Address size fault"},"pc":{"value":7163357228,"matchesCrashFrame":1},"far":{"value":4412424240}},"queue":"com.apple.xpc.activity.com.apple.XprotectFramework.PluginService.scan","frames":[{"imageOffset":6188,"symbol":"_kernelrpc_mach_port_mod_refs_trap","symbolLocation":8,"imageIndex":0},{"imageOffset":8548,"symbol":"mach_port_mod_refs","symbolLocation":40,"imageIndex":0},{"imageOffset":57284,"symbol":"_xpc_mach_port_try_retain_send","symbolLocation":48,"imageIndex":5},{"imageOffset":187184,"symbol":"___xpc_activity_dispatch_block_invoke.136","symbolLocation":240,"imageIndex":5},{"imageOffset":9712,"symbol":"_dispatch_call_block_and_release","symbolLocation":32,"imageIndex":6},{"imageOffset":16820,"symbol":"_dispatch_client_callout","symbolLocation":20,"imageIndex":6},{"imageOffset":47272,"symbol":"_dispatch_lane_serial_drain","symbolLocation":668,"imageIndex":6},{"imageOffset":50180,"symbol":"_dispatch_lane_invoke","symbolLocation":392,"imageIndex":6},{"imageOffset":93336,"symbol":"_dispatch_workloop_worker_thread","symbolLocation":648,"imageIndex":6},{"imageOffset":13152,"symbol":"_pthread_wqthread","symbolLocation":288,"imageIndex":7},{"imageOffset":8320,"symbol":"start_wqthread","symbolLocation":8,"imageIndex":7}]},{"id":555959,"queue":"com.apple.xpc.activity","frames":[{"imageOffset":47312,"symbol":"_dispatch_lane_serial_drain","symbolLocation":708,"imageIndex":6},{"imageOffset":46980,"symbol":"_dispatch_lane_serial_drain","symbolLocation":376,"imageIndex":6},{"imageOffset":50180,"symbol":"_dispatch_lane_invoke","symbolLocation":392,"imageIndex":6},{"imageOffset":93336,"symbol":"_dispatch_workloop_worker_thread","symbolLocation":648,"imageIndex":6},{"imageOffset":13152,"symbol":"_pthread_wqthread","symbolLocation":288,"imageIndex":7},{"imageOffset":8320,"symbol":"start_wqthread","symbolLocation":8,"imageIndex":7}]},{"id":556147,"frames":[{"imageOffset":8312,"symbol":"start_wqthread","symbolLocation":0,"imageIndex":7}]}],
+  "usedImages" : [
+  {
+    "source" : "P",
+    "arch" : "arm64e",
+    "base" : 7163351040,
+    "size" : 229376,
+    "uuid" : "03f48dc5-caa7-3678-af61-1a3c7fa8b06e",
+    "path" : "\/usr\/lib\/system\/libsystem_kernel.dylib",
+    "name" : "libsystem_kernel.dylib"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64e",
+    "base" : 7163904000,
+    "CFBundleShortVersionString" : "6.9",
+    "CFBundleIdentifier" : "com.apple.CoreFoundation",
+    "size" : 5533696,
+    "uuid" : "994db908-11a1-3e43-b7df-25c09d51368a",
+    "path" : "\/System\/Library\/Frameworks\/CoreFoundation.framework\/Versions\/A\/CoreFoundation",
+    "name" : "CoreFoundation",
+    "CFBundleVersion" : "1863"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64e",
+    "base" : 7179644928,
+    "CFBundleShortVersionString" : "6.9",
+    "CFBundleIdentifier" : "com.apple.Foundation",
+    "size" : 4136960,
+    "uuid" : "a2e534d9-cdf0-397f-a41e-147559c83893",
+    "path" : "\/System\/Library\/Frameworks\/Foundation.framework\/Versions\/C\/Foundation",
+    "name" : "Foundation",
+    "CFBundleVersion" : "1863"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64e",
+    "base" : 4375265280,
+    "CFBundleShortVersionString" : "2",
+    "CFBundleIdentifier" : "com.apple.XProtectFramework.XProtect",
+    "size" : 49152,
+    "uuid" : "460aa94b-d8d4-3ff8-959c-76dfadb6228f",
+    "path" : "\/Library\/Apple\/*\/XProtect.app\/Contents\/MacOS\/XProtect",
+    "name" : "XProtect",
+    "CFBundleVersion" : "1"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64e",
+    "base" : 4378853376,
+    "size" : 393216,
+    "uuid" : "d9c2a46e-8dc4-3950-9d6a-f799e8ccb683",
+    "path" : "\/usr\/lib\/dyld",
+    "name" : "dyld"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64e",
+    "base" : 7160623104,
+    "size" : 270336,
+    "uuid" : "84c6e826-0826-36cc-ad70-10288b0050e0",
+    "path" : "\/usr\/lib\/system\/libxpc.dylib",
+    "name" : "libxpc.dylib"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64e",
+    "base" : 7161741312,
+    "size" : 290816,
+    "uuid" : "f9300d47-d3db-3349-8a6d-acb68cd9983b",
+    "path" : "\/usr\/lib\/system\/libdispatch.dylib",
+    "name" : "libdispatch.dylib"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64e",
+    "base" : 7163580416,
+    "size" : 53248,
+    "uuid" : "42166a2c-89a9-3c38-a215-f028544cea23",
+    "path" : "\/usr\/lib\/system\/libsystem_pthread.dylib",
+    "name" : "libsystem_pthread.dylib"
+  }
+],
+  "sharedCache" : {
+  "base" : 7160283136,
+  "size" : 3136077824,
+  "uuid" : "513553bb-5ca5-3b9e-a613-b0603ffe3038"
+},
+  "vmSummary" : "ReadOnly portion of Libraries: Total=724.9M resident=0K(0%) swapped_out_or_unallocated=724.9M(100%)\nWritable regions: Total=102.0M written=0K(0%) resident=0K(0%) swapped_out=0K(0%) unallocated=102.0M(100%)\n\n                                VIRTUAL   REGION \nREGION TYPE                        SIZE    COUNT (non-coalesced) \n===========                     =======  ======= \nActivity Tracing                   256K        1 \nDispatch continuations            64.0M        1 \nKernel Alloc Once                   32K        1 \nMALLOC                            28.1M       13 \nMALLOC guard page                   96K        5 \nSTACK GUARD                       56.1M        4 \nStack                             9808K        4 \n__AUTH                            1529K       89 \n__AUTH_CONST                      6106K      210 \n__DATA                            7101K      197 \n__DATA_CONST                      5530K      212 \n__DATA_DIRTY                       443K       84 \n__FONT_DATA                          4K        1 \n__LINKEDIT                       577.4M        3 \n__OBJC_CONST                       570K       68 \n__OBJC_RO                         83.0M        1 \n__OBJC_RW                         3152K        1 \n__TEXT                           147.5M      220 \n__UNICODE                          592K        1 \ndyld private memory               1024K        1 \nmapped file                         48K        1 \nshared memory                       32K        2 \n===========                     =======  ======= \nTOTAL                            991.5M     1120 \n",
+  "legacyInfo" : {
+  "threadTriggered" : {
+    "queue" : "com.apple.xpc.activity.com.apple.XprotectFramework.PluginService.scan"
+  }
+},
+  "trialInfo" : {
+  "rollouts" : [
+    {
+      "rolloutId" : "5ffde50ce2aacd000d47a95f",
+      "factorPackIds" : {
+
+      },
+      "deploymentId" : 240000158
+    },
+    {
+      "rolloutId" : "60356660bbe37970735c5624",
+      "factorPackIds" : {
+
+      },
+      "deploymentId" : 240000027
+    }
+  ],
+  "experiments" : [
+
+  ]
+}
+}
+
